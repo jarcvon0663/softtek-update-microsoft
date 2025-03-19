@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Softtek - Actualiza tus datos</title>
+  <!-- Manifiesto de la PWA -->
+  <link rel="manifest" href="/softtek-update/manifest.json">
+  <!-- Define el color del tema -->
+  <meta name="theme-color" content="#000000">
+  <!-- Ícono para dispositivos Apple -->
+  <link rel="apple-touch-icon" href="/softtek-update/img/icon-192.png">
+  <!-- Google Fonts: Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+  </style>
+</head>
+
+<body class="bg-gray-100 text-gray-900">
+
+  <!-- Navbar (oculto por defecto) -->
+  <nav id="navbar"
+    class="fixed top-0 w-full bg-black text-white p-4 flex items-center justify-between shadow-md transition-all transform -translate-y-full opacity-0">
+    <!-- Logo -->
+    <img src="./img/logo-softtek.svg" alt="Softtek Logo" class="h-8 ml-4">
+
+    <!-- Botón Ir Arriba -->
+    <button onclick="scrollToTop()" class="mr-4 bg-white text-black px-3 py-1 rounded-md text-sm font-semibold">
+      ↑ Ir arriba
+    </button>
+  </nav>
+
+  <!-- Contenido principal con imagen de fondo -->
+  <div class="p-6 text-left bg-cover bg-center min-h-[300px] flex flex-col justify-center items-start relative"
+    style="background-image: url('./img/fondo.jpg');">
+
+    <!-- Logo en la esquina superior izquierda -->
+    <img src="./img/logo-softtek.svg" alt="Softtek Logo" class="absolute top-4 left-4 h-10">
+
+    <br><br><br>
+
+    <h1 class="text-3xl font-bold text-white mt-12">Actualiza <br> tus datos</h1>
+    <p class="mt-4 text-white">
+      Queremos asegurarnos de que cada Softtekian participe en las actividades de bienestar que mejor se adapten a sus
+      intereses y necesidades.
+      Para lograrlo, es importante que mantengas tus datos actualizados.
+    </p>
+  </div>
+
+  <!-- Formulario -->
+  <iframe width="640px" height="480px"
+    src="https://forms.office.com/Pages/ResponsePage.aspx?id=melOhjjFoES93QRJ3mLfbZ8AwJwR3KBJnotCGIKDf2BUNVIxUlVNWDJWSTZJR1gzTVNTSlFHRDZIRy4u&embed=true"
+    frameborder="0" marginwidth="0" marginheight="0" style="border: none; max-width:100%; max-height:100vh"
+    allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen> </iframe>
+
+
+  <!-- Footer -->
+  <footer class="text-center text-gray-500 text-sm mt-6 py-4">
+    © 2025 Softtek.
+  </footer>
+
+  <script>
+    // Función que muestra u oculta el Navbar según el scroll
+    window.addEventListener("scroll", () => {
+      const navbar = document.getElementById("navbar");
+      if (window.pageYOffset > 50) {
+        // Si se ha scrolleado más de 50px, muestra el navbar
+        navbar.classList.add("translate-y-0", "opacity-100");
+        navbar.classList.remove("-translate-y-full", "opacity-0");
+      } else {
+        // Si estamos cerca del top, oculta el navbar
+        navbar.classList.add("-translate-y-full", "opacity-0");
+        navbar.classList.remove("translate-y-0", "opacity-100");
+      }
+    });
+
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function () {
+        navigator.serviceWorker.register('/service-worker.js')
+          .then(function (registration) {
+            console.log('ServiceWorker registrado con éxito: ', registration);
+          })
+          .catch(function (error) {
+            console.log('Error al registrar el ServiceWorker: ', error);
+          });
+      });
+    }
+
+    // Función para hacer scroll hacia arriba suavemente
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+
+</body>
+
+</html>
