@@ -36,37 +36,42 @@
   </nav>
 
   <!-- Contenido principal con imagen de fondo -->
-  <div class="p-6 text-left bg-cover bg-center min-h-[250px] flex flex-col justify-center items-start relative"
+  <div class="text-left bg-cover bg-center min-h-[250px] flex flex-col justify-center items-start relative"
     style="background-image: url('./img/fondo.jpg');">
 
-    <!-- Logo en la esquina superior izquierda -->
-    <img src="./img/logo-softtek.svg" alt="Softtek Logo" class="absolute top-4 left-4 h-10">
-
-    <br><br><br><br><br>
-
-    <h1 class="text-3xl font-bold text-white">Actualiza <br> tus datos</h1>
-    <p class="mt-4 text-white">
-      Queremos asegurarnos de que cada Softtekian participe en las actividades de bienestar que mejor se adapten a sus
-      intereses y necesidades.
-      Para lograrlo, es importante que mantengas tus datos actualizados.
-    </p>
+    <div class="relative">
+      <!-- Contenedor con fondo negro semitransparente -->
+      <div class="bg-black bg-opacity-30 p-6 rounded-lg">
+        <!-- Logo en la esquina superior izquierda -->
+        <img src="./img/logo-softtek.svg" alt="Softtek Logo" class="absolute top-4 left-4 h-10">
+    
+        <!-- Espaciado para posicionar el contenido, puedes ajustar según necesites -->
+        <div class="mt-40">
+          <h1 class="text-3xl font-bold text-white">!Actualiza <br> tus datos¡</h1>
+          <p class="mt-4 text-white">
+            Queremos asegurarnos de que cada Softtekian participe en las actividades de bienestar que mejor se adapten a sus
+            intereses y necesidades. Para lograrlo, es importante que mantengas tus datos actualizados.
+          </p>
+        </div>
+      </div>
+    </div>
   </div>
 
   <!-- Formulario más arriba -->
   <div class="w-full flex justify-center mt-[-110px]">
     <iframe
       src="https://forms.office.com/Pages/ResponsePage.aspx?id=melOhjjFoES93QRJ3mLfbZ8AwJwR3KBJnotCGIKDf2BUNVIxUlVNWDJWSTZJR1gzTVNTSlFHRDZIRy4u&embed=true"
-      style="width: 100%; height: 150vh; border: none; max-width: 800px; border-radius: 10px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);"
+      style="width: 100%; height: 925vh; border: none; max-width: 800px; border-radius: 10px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);"
       allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen>
     </iframe>
   </div>
 
 
 
-  <!-- Footer -->
-  <footer class="text-center text-gray-500 text-sm mt-6 py-4 mt-[-110px]">
-    <br><br><br><br><br><br>
-    © 2025 Softtek.
+ <!-- Footer -->
+  <footer class="bg-black bg-opacity-80 text-white text-sm py-4 flex flex-col items-center">
+    <img src="./img/logo-softtek.svg" alt="Softtek Logo" class="h-10 mb-2">
+    <span>© 2025 Softtek.</span>
   </footer>
 
   <script>
